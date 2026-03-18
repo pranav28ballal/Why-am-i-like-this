@@ -19,7 +19,11 @@ export default function Result({ result, onHome }: ResultProps) {
 
     try {
       if (cardRef.current) {
-        const canvas = await html2canvas(cardRef.current, { scale: 2 });
+        const canvas = await html2canvas(cardRef.current, {
+          scale: 2,
+          backgroundColor: '#534AB7',
+          useCORS: true,
+        });
         canvas.toBlob(async (blob) => {
           if (blob && navigator.share) {
             const file = new File([blob], 'why-am-i-like-this.png', { type: 'image/png' });
@@ -65,16 +69,18 @@ export default function Result({ result, onHome }: ResultProps) {
             width: '400px',
             height: '200px',
             background: '#534AB7',
-            borderRadius: '16px',
+            borderRadius: '0px',
+            overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '32px',
+            boxSizing: 'border-box',
           }}
         >
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: '"Playfair Display", serif',
             fontSize: '28px',
             fontWeight: '700',
             color: '#FFFFFF',
@@ -84,7 +90,7 @@ export default function Result({ result, onHome }: ResultProps) {
             Why am I like this?
           </p>
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: '"Playfair Display", serif',
             fontSize: '16px',
             color: 'rgba(255,255,255,0.75)',
             margin: 0,
