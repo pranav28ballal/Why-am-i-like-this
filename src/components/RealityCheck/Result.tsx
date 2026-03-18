@@ -52,7 +52,7 @@ export default function Result({ result, situation, action, onHome }: ResultProp
             className="w-full bg-white/20 text-white rounded-xl py-4 font-semibold flex items-center justify-center gap-2 hover:bg-white/30 transition-all active:scale-95 mb-4 disabled:opacity-50"
           >
             <Lightbulb className="w-5 h-5" />
-            {loading ? 'Thinking...' : 'What could I have done?'}
+            {loading ? 'Thinking...' : 'What could have I done?'}
           </button>
         )}
 
