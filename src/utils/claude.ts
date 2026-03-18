@@ -1,5 +1,5 @@
 const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
-const API_URL = '/api/groq/openai/v1/chat/completions';
+const API_URL = '/api/proxy';
 
 export async function callClaude(prompt: string): Promise<string> {
   const response = await fetch(API_URL, {
