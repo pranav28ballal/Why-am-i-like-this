@@ -27,6 +27,21 @@ const themes: Theme[] = [
     title: "Why I can't focus",
     subtitle: 'Distracted and scattered',
   },
+  {
+    id: 'guilty',
+    title: 'Why I always feel guilty',
+    subtitle: 'Everything feels like my fault',
+  },
+  {
+    id: 'defensive',
+    title: 'Why I get so defensive',
+    subtitle: 'Taking everything personally',
+  },
+  {
+    id: 'compare',
+    title: 'Why I compare myself to others',
+    subtitle: 'Never feeling like enough',
+  },
 ];
 
 export default function ThemeSelect({ onSelectTheme, onBack }: ThemeSelectProps) {

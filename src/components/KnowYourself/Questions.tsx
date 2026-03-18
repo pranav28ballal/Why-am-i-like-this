@@ -113,6 +113,84 @@ const questionsByTheme: Record<string, Question[]> = {
       ],
     },
   ],
+  guilty: [
+    {
+      question: "You say no to a friend's plan. Immediately after, you:",
+      options: [
+        "Apologize three times and offer to make it up to them",
+        "Feel bad for hours even though it was completely valid",
+        "Move on without much thought",
+      ],
+    },
+    {
+      question: 'Something goes wrong in a group. Your first instinct is:',
+      options: [
+        "Assume it was somehow your fault",
+        "Wonder if you could have prevented it",
+        "Look at what actually caused it without blaming yourself",
+      ],
+    },
+    {
+      question: 'Someone is in a bad mood around you. You:',
+      options: [
+        "Immediately think you did something wrong",
+        "Feel uneasy until you figure out if it's about you",
+        "Give them space and don't take it personally",
+      ],
+    },
+  ],
+  defensive: [
+    {
+      question: "Someone gives you feedback you didn't ask for. You:",
+      options: [
+        "Feel attacked and immediately explain why they're wrong",
+        "Listen but feel your chest tighten and replay it for hours",
+        "Take it in and decide if it's useful",
+      ],
+    },
+    {
+      question: 'A close friend points out a habit of yours. You:',
+      options: [
+        "Point out one of their flaws right back",
+        "Feel hurt but pretend you're fine with it",
+        "Actually consider whether they have a point",
+      ],
+    },
+    {
+      question: 'You make a mistake in front of others. You:',
+      options: [
+        "Immediately justify it or blame something else",
+        "Feel embarrassed and over-explain yourself",
+        "Own it and move on",
+      ],
+    },
+  ],
+  compare: [
+    {
+      question: 'A friend gets something you wanted — a grade, a job, attention. You:',
+      options: [
+        "Feel genuinely happy for them but quietly devastated inside",
+        "Start questioning what's wrong with you",
+        "Feel happy for them without it affecting how you see yourself",
+      ],
+    },
+    {
+      question: "You scroll through someone's life online and you:",
+      options: [
+        "Feel like your own life suddenly looks smaller",
+        "Notice yourself picking apart what they have that you don't",
+        "Barely register it and keep scrolling",
+      ],
+    },
+    {
+      question: 'When you achieve something, your first thought is:',
+      options: [
+        "Who else has done this better or faster than me",
+        "Is this actually good enough compared to others",
+        "I worked hard for this and it feels good",
+      ],
+    },
+  ],
 };
 
 export default function Questions({ theme, onComplete, onBack }: QuestionsProps) {
