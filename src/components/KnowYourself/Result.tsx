@@ -74,7 +74,7 @@ export default function Result({ result, onHome }: ResultProps) {
           }}
         >
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'Lora, serif',
             fontSize: '28px',
             fontWeight: '700',
             color: '#FFFFFF',
@@ -84,7 +84,7 @@ export default function Result({ result, onHome }: ResultProps) {
             Why am I like this?
           </p>
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'Lora, serif',
             fontSize: '16px',
             color: 'rgba(255,255,255,0.75)',
             margin: 0,
