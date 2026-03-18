@@ -119,19 +119,23 @@ export default function Questions({ theme, onComplete, onBack }: QuestionsProps)
   const questions = questionsByTheme[theme.id] || questionsByTheme.overthink;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const handleAnswer = (answer: string) => {
-    const newAnswers = [
-      ...answers,
-      { question: questions[currentQuestion].question, answer },
-    ];
-    setAnswers(newAnswers);
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      onComplete(newAnswers);
-    }
+  const handleAnswer = (answer: string, index: number) => {
+    setSelectedIndex(index);
+    setTimeout(() => {
+      const newAnswers = [
+        ...answers,
+        { question: questions[currentQuestion].question, answer },
+      ];
+      setAnswers(newAnswers);
+      setSelectedIndex(null);
+      if (currentQuestion < questions.length - 1) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        onComplete(newAnswers);
+      }
+    }, 300);
   };
 
   return (
@@ -170,12 +174,15 @@ export default function Questions({ theme, onComplete, onBack }: QuestionsProps)
             {questions[currentQuestion].options.map((option, index) => (
               <button
                 key={index}
-                onClick={() => handleAnswer(option)}
-                className="w-full bg-gray-50 hover:bg-[#534AB7] hover:text-white rounded-xl p-4 text-left transition-all duration-200 border-2 border-transparent hover:border-[#534AB7]"
+                onClick={() => handleAnswer(option, index)}
+                disabled={selectedIndex !== null}
+                className={`w-full rounded-xl p-4 text-left transition-all duration-200 border-2 ${
+                  selectedIndex === index
+                    ? 'bg-[#534AB7] text-white border-[#534AB7]'
+                    : 'bg-gray-50 text-gray-700 border-transparent'
+                }`}
               >
-                <p className="text-gray-700">
-                  {option}
-                </p>
+                {option}
               </button>
             ))}
           </div>
