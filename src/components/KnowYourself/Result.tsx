@@ -15,7 +15,7 @@ export default function Result({ result, onHome }: ResultProps) {
     const firstLineMatch = result.split('\n')[0].trim();
     const patternName = boldMatch ? boldMatch[1] : firstLineMatch;
 
-    const message = `I just found out I'm "${patternName}" \n\nFind out what you are: https://why-am-i-like-this.vercel.app`;
+    const message = `I just found out I'm "${patternName}"\n\nFind out what you are: https://why-am-i-like-this.vercel.app`;
 
     try {
       if (cardRef.current) {
