@@ -7,20 +7,25 @@ interface ResultProps {
 
 export default function Result({ result, onHome }: ResultProps) {
   const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Why am I like this?',
-          text: result,
-        });
-      } catch (err) {
-        console.log('Share cancelled');
-      }
-    } else {
-      await navigator.clipboard.writeText(result);
-      alert('Copied to clipboard!');
+  const patternMatch = result.match(/\*\*(.*?)\*\*/);
+  const patternName = patternMatch ? patternMatch[1] : 'something interesting';
+  
+  const message = `I just found out I'm "${patternName}" 😭\n\nFind out what you are: https://why-am-i-like-this.vercel.app`;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Why am I like this?',
+        text: message,
+      });
+    } catch (err) {
+      console.log('Share cancelled');
     }
-  };
+  } else {
+    await navigator.clipboard.writeText(message);
+    alert('Copied to clipboard!');
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#534AB7] to-[#6B63C5] p-6">
