@@ -42,7 +42,7 @@ export async function analyzeKnowYourself(
 ${answersText}
 
 Give them an insight about themselves. Rules:
-- Pattern name: 2-3 plain words max, starting with "The". Should feel like a personality type a friend would recognize, not a diagnosis. Examples: "The Overthinker", "The People Pleaser", "The Avoider", "The Deflector", "The Fixer"
+- - ALWAYS start your response with the pattern name in bold on its own line, like: **The Overthinker**. Nothing else on that line.
 - 2-3 sentences only. No more.
 - Write like a smart friend who just gets it, not a therapist
 - - Draw conclusions from their answers but NEVER mention or repeat what they said
