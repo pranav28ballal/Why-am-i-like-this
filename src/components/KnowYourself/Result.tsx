@@ -7,8 +7,9 @@ interface ResultProps {
 
 export default function Result({ result, onHome }: ResultProps) {
   const handleShare = async () => {
-  const patternMatch = result.match(/\*\*(.*?)\*\*/);
-  const patternName = patternMatch ? patternMatch[1] : 'something interesting';
+  const boldMatch = result.match(/\*\*(.*?)\*\*/);
+  const firstLineMatch = result.split('\n')[0].trim();
+  const patternName = boldMatch ? boldMatch[1] : firstLineMatch;
   
   const message = `I just found out I'm "${patternName}" 😭\n\nFind out what you are: https://why-am-i-like-this.vercel.app`;
 
